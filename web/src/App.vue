@@ -29,6 +29,9 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  height: 90vh;
+  width: 94vw;
+  margin: 35px auto;
   // overflow-y: hidden;
   // overflow-x: hidden;
 }
@@ -37,18 +40,15 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("https://www.animalhi.com/thumbnails/detail/20181004/5bb667f1cb8c8.jpg");
-}
-
-body::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  &:-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  &:-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  &:-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
 }
 
 .wrapper {

@@ -1,23 +1,29 @@
 <template>
   <div class="contents">
-    <Sidenav />
-    <div class="main">
-      <div>Hello</div>
-      <button>
-        <a href="http://localhost:5000/api/auth">Authenticate</a>
-      </button>
-    </div>
+    <Sidenav :searchSubmit="handeSearchSubmit" />
+    <div class="main"></div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import Sidenav from "../components/Sidenav.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
     Sidenav,
+  },
+  setup() {
+    const search = ref("");
+    const handleSearchSubmit = () => {
+      console.log(search);
+    };
+
+    return {
+      handleSearchSubmit,
+      search,
+    };
   },
 });
 </script>

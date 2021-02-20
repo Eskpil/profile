@@ -56,7 +56,6 @@ class AuthController {
                 })
                 .returning("*")
                 .execute();
-            console.log(raw);
             response = raw.raw[0];
         } catch (err) {
             console.log(err);

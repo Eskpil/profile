@@ -12,7 +12,7 @@ import {
 @Entity({ name: "skills" })
 export class Skill extends BaseEntity {
     @Field(() => ID!)
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryGeneratedColumn("increment")
     id: string;
 
     @Field()
