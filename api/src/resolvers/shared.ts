@@ -1,5 +1,6 @@
 import { Ctx, Query, Resolver } from "type-graphql";
-import { User } from "../entities/user";
+import { UserType } from "../graphql/user";
+import { User } from "../models/user";
 import { MyContext } from "../types";
 
 @Resolver()
@@ -11,11 +12,13 @@ export class SharedResolver {
         return "Hello world";
     }
 
-    @Query(() => User, { nullable: true })
+    @Query(() => UserType, { nullable: true })
     async me(@Ctx() { req }: MyContext) {
-        const user = await User.findOne({
-            where: { id: (req.session as any).user },
-        });
+        console.log(req.session);
+
+        const user = await User.findOne({ _id: (req.session as any).user });
+
+        console.log(user);
 
         return user;
     }

@@ -1,10 +1,9 @@
 import express from "express";
-import { AuthRoutes } from "./controllers/auth";
+import { AuthController } from "./controllers/auth";
 import { FunRoutes } from "./controllers/fun";
 
 export const app = express();
 
-app.get("/auth", AuthRoutes.auth);
-app.get("/auth/callback", AuthRoutes.callback);
-app.patch("/auth/token", AuthRoutes.token);
+app.get("/auth", AuthController.auth);
+app.get("/auth/callback", AuthController.callback);
 app.get("/fun/background", FunRoutes.nasaImage);

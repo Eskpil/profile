@@ -4,7 +4,7 @@
     <div class="main">
       <div>Hello</div>
       <button>
-        <a href="http://localhost:5000/api/auth">Authenticate</a>
+        <a href="http://localhost:4000/api/auth">Authenticate</a>
       </button>
     </div>
   </div>

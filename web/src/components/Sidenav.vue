@@ -6,7 +6,7 @@
           v-if="data.me"
           class="avatar"
           :src="
-            `https://cdn.discordapp.com/avatars/${data.me.id}/${data.me.avatar}.png`
+            `https://cdn.discordapp.com/avatars/${data.me._id}/${data.me.avatar}.png`
           "
           :alt="`${data.me.username}'s avatar`"
         />
@@ -51,18 +51,20 @@ export default defineComponent({
       query: gql`
         {
           me {
-            id
+            _id
             username
             email
             avatar
-            createdAt
-            updatedAt
           }
         }
       `,
     });
 
     const route = useRoute();
+
+    console.log(route);
+
+    console.log(result);
 
     if (result.fetching) {
       console.log("Loading");

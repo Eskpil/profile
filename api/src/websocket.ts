@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import { EventEmitter } from "typeorm/platform/PlatformTools";
+import { EventEmitter } from "events";
 
 export declare interface Websocket {
     io: Server;
